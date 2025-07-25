@@ -1,6 +1,6 @@
 # day-one-automation
 
-**Fill 400+ missing Day One entries** by automatically summarizing your **Discord chats**, **Day One location history**, and **photos** — entirely **locally** with **Ollama** (no API keys).
+**Fill missing Day One entries** by automatically summarizing your **Discord chats**, **Day One location history**, and **photos** — entirely **locally** with **Ollama** (no API keys).
 
 - ✅ **No cloud, no API keys** — runs a local LLM via Ollama  
 - ✅ **Windows‑friendly** (works on macOS/Linux too)  
