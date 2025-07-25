@@ -407,7 +407,7 @@ def render_markdown(day, fused, stats, channels, template_str):
 @app.command()
 def run(
     start: datetime = typer.Option(..., help="Start date, e.g. 2023-09-01"),
-    end: datetime = typer.Option(..., help="End date, e.g. 2024-11-30"),
+    end: datetime = typer.Option(None, help="End date, e.g. 2024-11-30 (defaults to start date for single-day processing)"),
     model: str = typer.Option(None, help="Ollama model (overrides config.yaml)"),
     discord_dir: Path = typer.Option(Path("data/discord"), exists=False),
     dayone_json: Path = typer.Option(Path("data/dayone/dayone.json"), exists=False),
@@ -421,6 +421,10 @@ def run(
     cfg = load_config(config_path)
     if model:
         cfg["model"] = model
+
+    # If end date not provided, default to start date (single day processing)
+    if end is None:
+        end = start
 
     print("[bold cyan]Ingesting…[/bold cyan]")
     df_discord = ingest_discord(discord_dir)

@@ -1,0 +1,42 @@
+# Discord export JSON files (can be very large)
+data/discord/
+
+# DayOne export files
+data/dayone/
+
+# Photo directories (potentially large)
+data/photos/
+
+# Generated output files
+outputs/days/*.md
+outputs/cache/
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
