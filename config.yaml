@@ -1,0 +1,29 @@
+model: "llama3.1:8b"
+ctx: 8192
+temperature: 0.2
+daily_template: |
+  # {{ date }}
+
+  **People I talked to:** {{ people|join(", ") if people else "—" }}
+  **Places I went:** {{ locations|join(" → ") if locations else "—" }}
+  **How I felt:** {{ mood }}
+
+  ## My day
+  {{ summary }}
+
+  ## What happened when
+  {% if timeline %}
+  {% for item in timeline -%}
+  - {{ item.time }} — {{ item.event }}
+  {% endfor %}
+  {% else %}
+  (didn't note specific times today)
+  {% endif %}
+
+  ## Stats
+  - Messages I saw: {{ stats.discord_messages }}
+  - Photos taken: {{ stats.photos }}
+  - Places visited: {{ stats.location_points }}
+
+  ## Channels I was active in
+  {{ channels|join(", ") if channels else "—" }}

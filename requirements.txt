@@ -1,0 +1,9 @@
+ollama==0.1.8
+pandas>=2.2
+tqdm
+python-dateutil
+typer[all]
+rich
+jinja2
+exifread
+orjson
